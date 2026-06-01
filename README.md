@@ -3,7 +3,7 @@ Make your iOS apps literary faster by speeding up page transitions, keyboard pop
 
 <img width="400" height="711" alt="animationspeedboosteexample" src="https://github.com/user-attachments/assets/dfc3b6ce-aa55-4f44-b331-15b38016adf4" />
 
-Make your productivity app more productive by reducing the amount of time a user has to wait for animations. Speed up all animations in your app with just one simple setting.
+Make your productivity app more productive by reducing the amount of time a user has to wait for animations. Speed up all animations in your app with just one simple setting. This does not affect scrolling.
 
 Compatible with both UIKit and SwiftUI, iOS and tvOS.
 
