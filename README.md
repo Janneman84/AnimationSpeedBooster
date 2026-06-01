@@ -10,8 +10,7 @@ Compatible with both UIKit and SwiftUI, iOS and tvOS.
 ## Bonus feature
 For fun you can also adjust the blinking speed of text fields:
 
-<img width="400" height="140" alt="blinkingspeedexample" src="https://github.com/user-attachments/assets/2d187bfa-db9d-4e0c-b20f-3a75c000bde2" />
-
+<img width="400" height="136" alt="blinkingspeedexample2" src="https://github.com/user-attachments/assets/67718bc7-23a5-4054-8e12-12410047498d" />
 
 ## Installation
 
@@ -35,3 +34,6 @@ AnimationSpeedBooster.🚨 = 1.5
 ```
 
 You can use value 0.0 to disable animations entirely.
+
+### License
+MIT
