@@ -12,28 +12,23 @@ import UIKit
 @objc public class AnimationSpeedBooster: NSObject {
        
     /// Changes speed of animations throughout your app, like page transitions and keyboard slide animation. Use 1.0 for regular speed, 2.0 for double speed and so on, or 0.0 to disable animations entirely.
-    @objc public static var 🚀: Float {
-        set {
-            guard AnimationSpeedBooster.shared.animationSpeed != newValue else { return }
+    @MainActor @objc public static var 🚀: Float = AnimationSpeedBooster.shared.animationSpeed {
+        didSet {
+            guard max(oldValue, 0) != max(🚀, 0) else { return }
             AnimationSpeedBooster.shared.animationSpeed = Float.greatestFiniteMagnitude // this will cancel any current animations
             DispatchQueue.main.async() {
-                AnimationSpeedBooster.shared.animationSpeed = newValue > 0 ? newValue : Float.greatestFiniteMagnitude
+                if 🚀 > 0.0 {
+                    AnimationSpeedBooster.shared.animationSpeed = 🚀
+                }
             }
-        }
-        get {
-            AnimationSpeedBooster.shared.animationSpeed
         }
     }
     
     /// Changes typing indicator blink speed for all TextFields and TextViews. Use 1.0 for regular speed, 2.0 for double speed and so on, or 0.0 to disable blinking entirely.
-    @objc public static var 🚨: Float {
-        set {
-            DispatchQueue.main.async() {
-                AnimationSpeedBooster.shared.blinkSpeed = newValue > 0 ? newValue : Float.greatestFiniteMagnitude
-            }
-        }
-        get {
-            AnimationSpeedBooster.shared.blinkSpeed
+    @MainActor @objc public static var 🚨: Float = AnimationSpeedBooster.shared.blinkSpeed  {
+        didSet {
+            guard max(oldValue, 0) != max(🚨, 0) else { return }
+            AnimationSpeedBooster.shared.blinkSpeed = 🚨 > 0 ? 🚨 : Float.greatestFiniteMagnitude
         }
     }
     
@@ -41,13 +36,25 @@ import UIKit
     
     fileprivate var animationSpeed: Float = 1.0 {
         didSet {
-            NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+            if Thread.isMainThread {
+                NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+            } else {
+                DispatchQueue.main.async() {
+                    NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+                }
+            }
         }
     }
     
     fileprivate var blinkSpeed: Float = 1.0 {
         didSet {
-            NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+            if Thread.isMainThread {
+                NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+            } else {
+                DispatchQueue.main.async() {
+                    NotificationCenter.asb.post(name: UIWindow.updateSpeedNotification, object: nil)
+                }
+            }
         }
     }
 
