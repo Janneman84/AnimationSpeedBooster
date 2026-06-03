@@ -42,5 +42,5 @@ AnimationSpeedBooster.🚨 = 1.5
 
 You can use value 0.0 to disable animations entirely.
 
-### License
+## License
 MIT
