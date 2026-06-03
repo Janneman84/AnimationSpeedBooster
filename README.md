@@ -1,3 +1,10 @@
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FJanneman84%2FAnimationSpeedBooster%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/Janneman84/AnimationSpeedBooster)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FJanneman84%2FAnimationSpeedBooster%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/Janneman84/AnimationSpeedBooster)
+[![](https://shields.io/badge/UIKit-white?logo=swift&?style=social)](https://swiftpackageindex.com/Janneman84/AnimationSpeedBooster)
+[![](https://img.shields.io/badge/SwiftUI-524520?logo=swift)](https://swiftpackageindex.com/Janneman84/AnimationSpeedBooster)
+
+
+
 # AnimationSpeedBooster
 Make your iOS apps literary faster by speeding up page transitions, keyboard popup etc.
 
